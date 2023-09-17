@@ -42,7 +42,11 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:.
                                         " show whitespace
 set pastetoggle=<F2>                    " enter paste mode with F2
 set colorcolumn=90
-colorscheme nord                 " set the colour scheme
+" Only load the colour scheme here if this is not Neovim. If this is Neovim,
+" assume that the package manager will load the colour scheme.
+if !has('nvim')
+    colorscheme nord                    " set the colour scheme
+endif
 "set termguicolors                       " tell vim to use gui colors not terminal colors
 set clipboard=unnamedplus               " yank to and paste from the system clipboard
 set hidden                              " enable hidden buffers
