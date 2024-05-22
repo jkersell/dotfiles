@@ -224,5 +224,22 @@ mode "$mode_display" {
 
 bindsym $mod+x mode "$mode_display"
 
+set $mode_workspaces Move workspaces - Move current workspace left (Left/h) - Move current workspace right (Right/l)
+
+mode "$mode_workspaces" {
+    # Move workspaces to different displays
+    bindsym h move workspace to output left, mode "default"
+    bindsym l move workspace to output right, mode "default"
+
+    bindsym Left move workspace to output left, mode "default"
+    bindsym Right move workspace to output right, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+Shift+w mode "$mode_workspaces"
+
 # Set the default screen layout to dual monitors
 exec --no-startup-id $HOME/.screenlayout/dual_monitors.sh
