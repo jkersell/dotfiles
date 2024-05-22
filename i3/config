@@ -209,6 +209,7 @@ bindsym $mod+Ctrl+Shift+l exec --no-startup-id $i3lockwall
 # Make pop-up and task dialog windows floating
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
+for_window [class="Vivaldi-stable" instance="crx_cifhbcnohmdccbgoicgdjpfamggdegmo"] floating disable
 
 # Add a menu to select different screen layouts
 set $mode_display Config monitor layout - Dual Monitors (d) - Laptop Display (t)
