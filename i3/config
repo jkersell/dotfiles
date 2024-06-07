@@ -210,7 +210,7 @@ bar {
 }
 
 # Use a fancy looking lock screen that I got from a tutorial
-set $i3lockwall sh ~/.config/i3/scripts/lock-screen-gen.sh
+set $i3lockwall sh $HOME/.config/i3/scripts/lock-screen-gen.sh
 
 bindsym $mod+Ctrl+Shift+l exec --no-startup-id $i3lockwall
 
