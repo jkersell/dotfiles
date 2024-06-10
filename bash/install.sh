@@ -1,30 +1,45 @@
 #!/bin/bash
 
-mkdir --parents --verbose "$HOME/.profile.d"
-cp --verbose .profile.d/* "$HOME/.profile.d"
-
 customization_marker="### customization ###"
 
-if grep "$customization_marker" "$HOME/.profile" > /dev/null; then
-  echo "Customization already present in $HOME/.profile"
-  exit 0;
-fi
+customize_file () {
+  target_file="$1"
 
-# This snippet is copied from /etc/profile on an Ubuntu system and
-# adapted to run scripts in the custom user .profile.d directory
-cat >> "$HOME/.profile" <<EOF
+  echo "Cusomtizing $HOME/$target_file"
+
+  # This snippet is copied from /etc/profile on an Ubuntu system and
+  # adapted to run scripts in the custom user directory
+  cat >> "$HOME/$target_file" <<HERE
 
 
 $customization_marker
 
 
-if [ -d "$HOME/.profile.d" ]; then
-  for i in "$HOME"/.profile.d/*.sh; do
+if [ -d "$HOME/$target_file.d" ]; then
+  for i in "$HOME/$target_file.d"/*.sh; do
     if [ -r "\$i" ]; then
       . "\$i"
     fi
   done
   unset i
 fi
-EOF
+HERE
+}
 
+# Customize the .profile file
+target_file=".profile"
+if ! grep "$customization_marker" "$HOME/$target_file" > /dev/null; then
+  mkdir --parents --verbose "$HOME/$target_file.d"
+  cp --verbose "$target_file".d/* "$HOME/$target_file.d"
+
+  customize_file "$target_file"
+fi
+
+# Customize the .bashrc file
+target_file=".bashrc"
+if ! grep "$customization_marker" "$HOME/$target_file" > /dev/null; then
+  mkdir --parents --verbose "$HOME/$target_file.d"
+  cp --verbose "$target_file".d/* "$HOME/$target_file.d"
+
+  customize_file "$target_file"
+fi
