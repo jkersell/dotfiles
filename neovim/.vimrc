@@ -48,7 +48,8 @@ if !has('nvim')
     colorscheme nord                    " set the colour scheme
 endif
 "set termguicolors                      " tell vim to use gui colors not terminal colors
-set clipboard=unnamedplus               " yank to and paste from the system clipboard
+set clipboard=unnamedplus               " alias the + register to the system clipboard
+
 set hidden                              " enable hidden buffers
 
 set t_Co=256                            " force vim to use 256 colors
