@@ -47,7 +47,7 @@ set colorcolumn=90
 if !has('nvim')
     colorscheme nord                    " set the colour scheme
 endif
-"set termguicolors                       " tell vim to use gui colors not terminal colors
+"set termguicolors                      " tell vim to use gui colors not terminal colors
 set clipboard=unnamedplus               " yank to and paste from the system clipboard
 set hidden                              " enable hidden buffers
 
