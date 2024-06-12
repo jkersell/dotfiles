@@ -234,14 +234,18 @@ mode "$mode_display" {
 
 bindsym $mod+x mode "$mode_display"
 
-set $mode_workspaces Move workspaces - Move current workspace left (Left/h) - Move current workspace right (Right/l)
+set $mode_workspaces Move current workspace left/right/up/down (Left/Right/Up/Down, h/j/k/l)
 
 mode "$mode_workspaces" {
     # Move workspaces to different displays
     bindsym h move workspace to output left, mode "default"
+    bindsym j move workspace to output down, mode "default"
+    bindsym k move workspace to output up, mode "default"
     bindsym l move workspace to output right, mode "default"
 
     bindsym Left move workspace to output left, mode "default"
+    bindsym Down move workspace to output down, mode "default"
+    bindsym Up move workspace to output up, mode "default"
     bindsym Right move workspace to output right, mode "default"
 
     # back to normal: Enter or Escape
