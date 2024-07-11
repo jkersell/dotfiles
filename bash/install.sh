@@ -26,9 +26,14 @@ fi
 HERE
 }
 
+is_customized () {
+  target_file="$1"
+  grep "$customization_marker" "$HOME/$target_file" > /dev/null
+}
+
 # Customize the .profile file
 target_file=".profile"
-if ! grep "$customization_marker" "$HOME/$target_file" > /dev/null; then
+if ! is_customized "$target_file"; then
   customize_file "$target_file"
 fi
 
@@ -37,7 +42,7 @@ cp --verbose "$target_file".d/* "$HOME/$target_file.d"
 
 # Customize the .bashrc file
 target_file=".bashrc"
-if ! grep "$customization_marker" "$HOME/$target_file" > /dev/null; then
+if ! is_customized "$target_file"; then
   customize_file "$target_file"
 fi
 
