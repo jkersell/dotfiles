@@ -29,17 +29,17 @@ HERE
 # Customize the .profile file
 target_file=".profile"
 if ! grep "$customization_marker" "$HOME/$target_file" > /dev/null; then
-  mkdir --parents --verbose "$HOME/$target_file.d"
-  cp --verbose "$target_file".d/* "$HOME/$target_file.d"
-
   customize_file "$target_file"
 fi
+
+mkdir --parents --verbose "$HOME/$target_file.d"
+cp --verbose "$target_file".d/* "$HOME/$target_file.d"
 
 # Customize the .bashrc file
 target_file=".bashrc"
 if ! grep "$customization_marker" "$HOME/$target_file" > /dev/null; then
-  mkdir --parents --verbose "$HOME/$target_file.d"
-  cp --verbose "$target_file".d/* "$HOME/$target_file.d"
-
   customize_file "$target_file"
 fi
+
+mkdir --parents --verbose "$HOME/$target_file.d"
+cp --verbose "$target_file".d/* "$HOME/$target_file.d"
