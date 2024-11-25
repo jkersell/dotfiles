@@ -55,3 +55,6 @@ text = "#2e3440"
 
 [font]
 size = 9.0
+
+[env]
+WINIT_X11_SCALE_FACTOR = "1.0"
