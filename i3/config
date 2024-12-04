@@ -153,6 +153,13 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
+# assign workspaces to specific monitors
+workspace $comms output DP-3-5
+workspace $entertainment output DP-3-6
+workspace $web output DP-3-5
+workspace $terms output DP-3-6
+workspace 5 output DP-3-6
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
