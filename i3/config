@@ -157,7 +157,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 workspace $comms output DP-3-5
 workspace $entertainment output DP-3-6
 workspace $web output DP-3-5
-workspace $terms output DP-3-6
+workspace $terms output DP-3-6 DP-3
 workspace 5 output DP-3-6
 
 # reload the configuration file
