@@ -40,7 +40,6 @@ set noswapfile                          " don't make swp files
 set list                                " show whitspace
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
                                         " show whitespace
-set pastetoggle=<F2>                    " enter paste mode with F2
 set colorcolumn=90
 " Only load the colour scheme here if this is not Neovim. If this is Neovim,
 " assume that the package manager will load the colour scheme.
