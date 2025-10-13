@@ -2,6 +2,8 @@
 
 nvim_config_dir="$HOME"/.config/nvim
 
+mkdir --parents --verbose "$nvim_config_dir"
+
 cp --verbose .vimrc "$HOME"/.vimrc
 cp --verbose init.vim "$nvim_config_dir"/init.vim
 cp --verbose scripts.vim "$nvim_config_dir"/scripts.vim
