@@ -12,3 +12,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
+
+vim.lsp.enable("zuban")
+vim.diagnostic.enable = true
+vim.diagnostic.config({
+    virtual_lines = true,
+})
