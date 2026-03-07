@@ -12,3 +12,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
+
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = { 'go', 'python', 'lua' },
+    callback = function()
+      vim.treesitter.start()
+    end,
+})
