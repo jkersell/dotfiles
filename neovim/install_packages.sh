@@ -6,6 +6,7 @@
 PACKAGES=(
     xsel # nvim can use tmux as a clipboard provider, so xsel is only required
          #  if tmux is not available
+    gopls
 )
 
 source /etc/os-release
