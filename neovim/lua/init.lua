@@ -13,6 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
 
+-- Treesitter used for syntax highlighting
 vim.api.nvim_create_autocmd('FileType', {
     pattern = { 'go', 'python', 'lua' },
     callback = function()
