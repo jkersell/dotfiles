@@ -13,6 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
 
+vim.lsp.enable("gopls")
 vim.lsp.enable("lua_ls")
 
 -- Treesitter used for syntax highlighting
